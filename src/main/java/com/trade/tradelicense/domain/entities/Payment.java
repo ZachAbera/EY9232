@@ -43,11 +43,17 @@ public class Payment {
     private Long id;
 
     /**
-     * The monetary amount due for this trade-license application, expressed in
-     * the system's base currency.
+     * The monetary amount due for this trade-license application.
      */
     @Column(nullable = false, precision = 19, scale = 4)
     private BigDecimal amount;
+
+    /**
+     * ISO 4217 three-letter currency code for the payment (e.g. {@code "AED"},
+     * {@code "USD"}).
+     */
+    @Column(nullable = false, length = 3)
+    private String currency;
 
     /**
      * Current lifecycle state of the payment.
