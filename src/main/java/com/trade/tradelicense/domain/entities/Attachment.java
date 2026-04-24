@@ -56,6 +56,13 @@ public class Attachment {
     private String contentType;
 
     /**
+     * SHA-256 hex digest of the file content, used for integrity verification
+     * and duplicate detection.  May be {@code null} if not computed at upload time.
+     */
+    @Column(length = 64)
+    private String checksum;
+
+    /**
      * File size in bytes, used for validation and storage quota enforcement.
      */
     @Column(nullable = false)
