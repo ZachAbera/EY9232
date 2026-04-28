@@ -1,0 +1,12 @@
+package com.trade.tradelicense.domain.events;
+
+import com.trade.tradelicense.domain.valueobjects.ApplicationId;
+import com.trade.tradelicense.domain.valueobjects.ReviewerId;
+
+import java.time.LocalDateTime;
+
+public record TradeLicenseApplicationAcceptedByReviewer(
+        ApplicationId applicationId,
+        ReviewerId reviewerId,
+        LocalDateTime occurredAt) implements DomainEvent {
+}
